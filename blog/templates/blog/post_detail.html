@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+	<article class="post">
+		<!-- only display pub_date if already published -->
+		{% if post.published_date %}
+			<time class="date">
+				{{post.published_date}}
+			</time>
+		{% endif %}
+		<!-- title and text are the key component in detail page -->
+		<h2>{{ post.title }}</h2>
+		<p>{{post.text|linebreaksbr}}</p>
+	</article>	
+{% endblock %}
